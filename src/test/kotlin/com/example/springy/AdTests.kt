@@ -45,7 +45,7 @@ class AddTests(@Autowired val client: TestRestTemplate) {
 		val response = client.exchange(url, method, entity, typeReference<List<ArtistAd>>())
 		val containsTestAd = response.body?.any { it.id == testAd.id}
 
-		assert(containsTestAd == false)
+		assert(containsTestAd == true)
 	}
 
 }
